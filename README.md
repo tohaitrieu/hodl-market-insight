@@ -4,7 +4,7 @@ Dữ liệu thị trường HODL.VN ngay trong trợ lý AI: cổ phiếu Việt
 
 Repo gồm:
 
-- **MCP server** `hodl` — `https://mcp.hodl.vn/mcp` (11 tool chỉ đọc).
+- **MCP server** `hodl` — `https://mcp.hodl.vn/mcp` (12 tool chỉ đọc).
 - **Skill** `hodl-market-research` — dạy AI gọi tool đúng thứ tự, đọc đúng đơn vị, luôn dẫn nguồn.
 - **Plugin Claude Code** `hodl` — gói sẵn cả hai.
 

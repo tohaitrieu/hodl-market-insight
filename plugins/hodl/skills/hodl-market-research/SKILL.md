@@ -10,7 +10,7 @@ metadata:
 
 # Nghiên cứu thị trường với HODL.VN
 
-Dữ liệu đến từ MCP server `hodl` (11 tool, chỉ đọc). Cổ phiếu, chỉ số Việt Nam, vĩ mô và ETF ghi nguồn HODL.VN; forex, crypto, hàng hoá ghi nguồn totrieu.com.
+Dữ liệu đến từ MCP server `hodl` (12 tool, chỉ đọc). Cổ phiếu, chỉ số Việt Nam, vĩ mô và ETF ghi nguồn HODL.VN; forex, crypto, hàng hoá ghi nguồn totrieu.com.
 
 Nếu không thấy tool `hodl` nào trong phiên: báo người dùng cài MCP theo https://hodl.vn/ai. Có công cụ đọc web thì đọc `https://hodl.vn/llms.txt` và trang `https://hodl.vn/stock/<mã viết thường>` (vd. `/stock/fpt`). **Không bao giờ bịa số liệu.**
 
@@ -40,6 +40,9 @@ Giá lịch sử cổ phiếu Việt Nam **đã điều chỉnh** theo cổ tứ
 
 ### Khối ngoại, tự doanh (cổ phiếu Việt Nam)
 `get_investor_flows` — bỏ trống `symbol` = toàn sàn (`exchange`, thêm `include_leaders` để lấy top mua/bán ròng); có `symbol` = chuỗi của riêng mã. **Giá trị là tỷ đồng** (`unit: billion_vnd`); dương = mua ròng, âm = bán ròng. Mặc định `basis: matched` chỉ tính lệnh khớp — giao dịch thoả thuận lớn có thể làm số `total` lệch hẳn (một phiên thoả thuận nghìn tỷ ở một mã), nên khi nói "khối ngoại bán ròng" hãy nêu rõ thang đo. Kỳ `is_partial` = chưa kết thúc, nói rõ là số tạm.
+
+### Mùa vụ giá (tính chu kỳ theo tháng)
+`get_seasonality` — % thay đổi giá đóng cửa từng tháng (giá đã điều chỉnh) qua nhiều năm; `summary.avg_pct` = trung bình mỗi tháng, `summary.up_ratio_pct` = % số năm tháng đó tăng. Tháng đang chạy (`current_month`) có trong bảng nhưng không tính vào trung bình. Đây là thống kê quá khứ, KHÔNG phải dự báo — nêu số năm mẫu khi kết luận.
 
 ## Luật trả lời
 

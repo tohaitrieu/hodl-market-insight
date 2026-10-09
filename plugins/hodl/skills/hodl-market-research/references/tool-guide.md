@@ -1,4 +1,4 @@
-# Cẩm nang 11 tool của MCP server hodl
+# Cẩm nang 12 tool của MCP server hodl
 
 Mọi tool chỉ đọc. Mỗi kết quả có dạng `{data, source{name, attribution, url, as_of}, disclaimer}`.
 
@@ -15,6 +15,7 @@ Mọi tool chỉ đọc. Mỗi kết quả có dạng `{data, source{name, attri
 | `get_macro_series` | Free | Chuỗi số một chỉ số | `indicator` (slug), `date_from`, `date_to`, `points` |
 | `get_etf_flows` | Free | Dòng tiền ETF | `asset` (bitcoin, ethereum, solana, gold), `timeframe` D/W/M/Q/Y, `periods`, `fund` (vàng: GLD, GLDM, SGLD) |
 | `get_investor_flows` | Free | Khối ngoại / tự doanh cổ phiếu VN | `investor_type` foreign/proprietary, `symbol` (bỏ trống = toàn sàn), `exchange` HOSE/HNX/UPCOM/ALL, `period` day/month/quarter/year, `limit`, `basis` matched/total, `include_leaders` (top mua/bán ròng, chỉ chế độ toàn sàn) |
+| `get_seasonality` | Free | Mùa vụ giá — % theo tháng nhiều năm | `symbol` (cổ phiếu hoặc chỉ số VN), `years` (bị cắt theo gói) — trả % từng tháng, cả năm, trung bình và tỷ lệ năm tăng của mỗi tháng |
 
 ## Hạn mức theo gói
 
@@ -26,6 +27,7 @@ Mọi tool chỉ đọc. Mỗi kết quả có dạng `{data, source{name, attri
 | Kỳ vĩ mô | 12 | 240 |
 | Kỳ ETF | 30 | 365 |
 | Kỳ khối ngoại / tự doanh | 30 | 250 |
+| Số năm mùa vụ giá | 5 | 20 |
 | Ảnh chụp kỹ thuật | — | Có |
 
 Bảng cập nhật mới nhất: https://hodl.vn/ai. Mỗi tài khoản (Free lẫn Loyalty) có 1 API key.
