@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "vn.hodl/market-data",
+  "title": "HODL.VN — Vietnam market data",
+  "description": "Vietnamese stocks, VN and world macro, ETF flows, forex, crypto, commodities. Read-only, cited.",
+  "version": "1.0.0",
+  "websiteUrl": "https://hodl.vn/ai",
+  "repository": {
+    "url": "https://github.com/tohaitrieu/hodl-market-insight",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.hodl.vn/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <API key> — free key at https://hodl.vn/tai-khoan/ket-noi-ai",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
