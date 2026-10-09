@@ -1,0 +1,10 @@
+{
+  "name": "hodl",
+  "version": "1.0.0",
+  "description": "HODL.VN market data for Claude: Vietnamese stocks, VN-Index, Vietnamese and world macro, ETF flows, forex, crypto, commodities and HODL.VN analysis — always cited. Dữ liệu cổ phiếu Việt Nam, vĩ mô, ETF, forex, crypto, hàng hoá từ HODL.VN.",
+  "author": { "name": "HODL.VN", "url": "https://hodl.vn" },
+  "homepage": "https://hodl.vn/ai",
+  "repository": "https://github.com/tohaitrieu/hodl-market-insight",
+  "license": "MIT",
+  "keywords": ["vietnam", "stocks", "market-data", "macro", "etf", "forex", "crypto", "mcp"]
+}

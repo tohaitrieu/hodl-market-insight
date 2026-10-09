@@ -1,0 +1,14 @@
+{
+  "name": "hodl-market-insight",
+  "owner": { "name": "HODL.VN", "url": "https://hodl.vn" },
+  "metadata": {
+    "description": "HODL.VN market data plugin for Claude Code — Vietnamese stocks, macro, ETF flows, forex, crypto, commodities."
+  },
+  "plugins": [
+    {
+      "name": "hodl",
+      "source": "./plugins/hodl",
+      "description": "MCP server + research skill for HODL.VN market data, always cited."
+    }
+  ]
+}
