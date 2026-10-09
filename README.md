@@ -19,10 +19,11 @@ Trang giới thiệu, danh sách tool và bảng hạn mức: **https://hodl.vn/
 ### Claude Code — plugin (MCP + skill)
 
 ```bash
-export HODL_API_KEY="hodl_..."        # thêm vào ~/.zshrc hoặc ~/.bashrc
 claude plugin marketplace add tohaitrieu/hodl-market-insight
 claude plugin install hodl@hodl-market-insight
 ```
+
+Lúc cài, Claude Code hỏi **HODL.VN API key** và cất vào kho bảo mật của máy (không ghi ra file cấu hình).
 
 Chỉ cần MCP, không cần skill:
 
@@ -99,10 +100,12 @@ Bảng đầy đủ, luôn cập nhật: https://hodl.vn/ai
 HODL.VN market data inside your AI assistant: Vietnamese stocks, VN-Index, Vietnamese and world macro, Bitcoin/Ethereum/Solana/gold ETF flows, forex, crypto, commodities and HODL.VN analysis — every answer cites its source.
 
 1. Get a free API key at https://hodl.vn/tai-khoan/ket-noi-ai (sign-in required).
-2. Claude Code: `export HODL_API_KEY=...`, then `claude plugin marketplace add tohaitrieu/hodl-market-insight` and `claude plugin install hodl@hodl-market-insight`.
+2. Claude Code: `claude plugin marketplace add tohaitrieu/hodl-market-insight` then `claude plugin install hodl@hodl-market-insight` — you'll be asked for the API key, stored in secure storage.
 3. Other clients (Claude.ai, ChatGPT, Cursor, VS Code): see the snippets above; the endpoint is `https://mcp.hodl.vn/mcp` with `Authorization: Bearer <key>`, or your personal connection URL for Claude.ai / ChatGPT.
 
 Data is for reference only, not investment advice.
+
+Privacy policy: https://hodl.vn/chinh-sach-rieng-tu
 
 ## License
 
