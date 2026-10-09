@@ -10,9 +10,11 @@ Repo gồm:
 
 Trang giới thiệu, danh sách tool và bảng hạn mức: **https://hodl.vn/ai**
 
-## 1. Lấy API key (miễn phí)
+## 1. Đăng nhập (OAuth) — không cần key
 
-Đăng nhập HODL.VN → **Tài khoản → Kết nối AI**: https://hodl.vn/tai-khoan/ket-noi-ai. Mỗi tài khoản có 1 key (Free hoặc Loyalty); sao chép lại bao nhiêu lần cũng được.
+Claude.ai, ChatGPT, Claude Code kết nối bằng **đăng nhập HODL.VN**: trỏ tới `https://mcp.hodl.vn/mcp`, trình duyệt mở hodl.vn → đăng nhập bằng mã email → bấm Đồng ý. Gỡ kết nối bất cứ lúc nào tại **Tài khoản → Kết nối AI**: https://hodl.vn/tai-khoan/ket-noi-ai.
+
+Client chưa hỗ trợ OAuth (Cursor, VS Code bản cũ, Gemini và AI web khác) dùng **API key** hoặc **URL kết nối riêng** có sẵn ở cùng trang. Mỗi tài khoản có 1 key (Free hoặc Loyalty).
 
 ## 2. Cài đặt
 
@@ -23,19 +25,19 @@ claude plugin marketplace add tohaitrieu/hodl-market-insight
 claude plugin install hodl@hodl-market-insight
 ```
 
-Lúc cài, Claude Code hỏi **HODL.VN API key** và cất vào kho bảo mật của máy (không ghi ra file cấu hình).
+Lần đầu dùng, gõ `/mcp` → chọn `hodl` → **Authenticate** → đăng nhập HODL.VN trên trình duyệt.
 
 Chỉ cần MCP, không cần skill:
 
 ```bash
-claude mcp add --transport http hodl https://mcp.hodl.vn/mcp --header "Authorization: Bearer hodl_..."
+claude mcp add --transport http hodl https://mcp.hodl.vn/mcp
 ```
 
 ### Claude.ai / Claude Desktop
 
 1. Settings → Connectors → Add custom connector
 2. Name: `HODL.VN`
-3. Remote MCP server URL: **URL kết nối riêng** của bạn (dạng `https://mcp.hodl.vn/mcp/k/…`), sao chép tại Tài khoản → Kết nối AI.
+3. Remote MCP server URL: `https://mcp.hodl.vn/mcp` → **Connect** → đăng nhập HODL.VN → Đồng ý.
 
 Thêm skill: tải [bản zip của thư mục skill](plugins/hodl/skills/hodl-market-research) (nén cả thư mục `hodl-market-research`) → Settings → Capabilities → Skills → Upload skill.
 
@@ -43,10 +45,14 @@ Thêm skill: tải [bản zip của thư mục skill](plugins/hodl/skills/hodl-m
 
 1. Settings → Apps → Advanced settings → bật **Developer mode**
 2. Create app → Name: `HODL.VN`
-3. MCP Server URL: URL kết nối riêng (như trên)
-4. Authentication: No authentication
+3. MCP Server URL: `https://mcp.hodl.vn/mcp`
+4. Authentication: **OAuth** → đăng nhập HODL.VN → Đồng ý.
 
-### Cursor — `~/.cursor/mcp.json`
+### Gemini và AI web khác (không hỗ trợ OAuth)
+
+Dùng **URL kết nối riêng** (dạng `https://mcp.hodl.vn/mcp/k/…`), sao chép tại Tài khoản → Kết nối AI.
+
+### Cursor — `~/.cursor/mcp.json` (API key)
 
 ```json
 {
@@ -59,7 +65,7 @@ Thêm skill: tải [bản zip của thư mục skill](plugins/hodl/skills/hodl-m
 }
 ```
 
-### VS Code — `.vscode/mcp.json`
+### VS Code — `.vscode/mcp.json` (API key)
 
 ```json
 {
@@ -99,9 +105,9 @@ Bảng đầy đủ, luôn cập nhật: https://hodl.vn/ai
 
 HODL.VN market data inside your AI assistant: Vietnamese stocks, VN-Index, Vietnamese and world macro, Bitcoin/Ethereum/Solana/gold ETF flows, forex, crypto, commodities and HODL.VN analysis — every answer cites its source.
 
-1. Get a free API key at https://hodl.vn/tai-khoan/ket-noi-ai (sign-in required).
-2. Claude Code: `claude plugin marketplace add tohaitrieu/hodl-market-insight` then `claude plugin install hodl@hodl-market-insight` — you'll be asked for the API key, stored in secure storage.
-3. Other clients (Claude.ai, ChatGPT, Cursor, VS Code): see the snippets above; the endpoint is `https://mcp.hodl.vn/mcp` with `Authorization: Bearer <key>`, or your personal connection URL for Claude.ai / ChatGPT.
+1. Endpoint `https://mcp.hodl.vn/mcp` supports **OAuth 2.1** (issuer `https://hodl.vn`): Claude.ai, ChatGPT and Claude Code just connect and sign in with a HODL.VN account — no key needed.
+2. Claude Code: `claude plugin marketplace add tohaitrieu/hodl-market-insight` then `claude plugin install hodl@hodl-market-insight`, then `/mcp` → hodl → Authenticate.
+3. Clients without OAuth (Cursor, VS Code, Gemini…): use a free API key (`Authorization: Bearer <key>`) or your personal connection URL from https://hodl.vn/tai-khoan/ket-noi-ai.
 
 Data is for reference only, not investment advice.
 

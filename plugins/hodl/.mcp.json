@@ -2,10 +2,7 @@
   "mcpServers": {
     "hodl": {
       "type": "http",
-      "url": "https://mcp.hodl.vn/mcp",
-      "headers": {
-        "Authorization": "Bearer ${user_config.api_key}"
-      }
+      "url": "https://mcp.hodl.vn/mcp"
     }
   }
 }

@@ -3,7 +3,7 @@
   "name": "vn.hodl/market-data",
   "title": "HODL.VN — Vietnam market data",
   "description": "Vietnamese stocks, VN and world macro, ETF flows, forex, crypto, commodities. Read-only, cited.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "websiteUrl": "https://hodl.vn/ai",
   "repository": {
     "url": "https://github.com/tohaitrieu/hodl-market-insight",
@@ -16,8 +16,8 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer <API key> — free key at https://hodl.vn/tai-khoan/ket-noi-ai",
-          "isRequired": true,
+          "description": "Optional: Bearer <API key> for clients without OAuth. OAuth 2.1 (issuer https://hodl.vn) is the default.",
+          "isRequired": false,
           "isSecret": true
         }
       ]
