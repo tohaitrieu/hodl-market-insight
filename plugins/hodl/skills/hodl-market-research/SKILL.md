@@ -10,7 +10,7 @@ metadata:
 
 # Nghiên cứu thị trường với HODL.VN
 
-Dữ liệu đến từ MCP server `hodl` (10 tool, chỉ đọc). Cổ phiếu, chỉ số Việt Nam, vĩ mô và ETF ghi nguồn HODL.VN; forex, crypto, hàng hoá ghi nguồn totrieu.com.
+Dữ liệu đến từ MCP server `hodl` (11 tool, chỉ đọc). Cổ phiếu, chỉ số Việt Nam, vĩ mô và ETF ghi nguồn HODL.VN; forex, crypto, hàng hoá ghi nguồn totrieu.com.
 
 Nếu không thấy tool `hodl` nào trong phiên: báo người dùng cài MCP theo https://hodl.vn/ai. Có công cụ đọc web thì đọc `https://hodl.vn/llms.txt` và trang `https://hodl.vn/stock/<mã viết thường>` (vd. `/stock/fpt`). **Không bao giờ bịa số liệu.**
 
@@ -37,6 +37,9 @@ Giá lịch sử cổ phiếu Việt Nam **đã điều chỉnh** theo cổ tứ
 
 ### Dòng tiền ETF (Bitcoin, Ethereum, Solana, vàng)
 `get_etf_flows` — bỏ trống `asset` = tóm tắt phiên mới nhất cả bốn; có `asset` + `timeframe` (D/W/M/Q/Y) + `periods` = chuỗi theo kỳ; `fund` (GLD/GLDM/SGLD) chỉ dùng cho vàng. **Mọi dòng tiền là triệu USD**; dương = tiền vào, âm = tiền ra; quỹ `null` = chưa báo cáo kỳ đó.
+
+### Khối ngoại, tự doanh (cổ phiếu Việt Nam)
+`get_investor_flows` — bỏ trống `symbol` = toàn sàn (`exchange`, thêm `include_leaders` để lấy top mua/bán ròng); có `symbol` = chuỗi của riêng mã. **Giá trị là tỷ đồng** (`unit: billion_vnd`); dương = mua ròng, âm = bán ròng. Mặc định `basis: matched` chỉ tính lệnh khớp — giao dịch thoả thuận lớn có thể làm số `total` lệch hẳn (một phiên thoả thuận nghìn tỷ ở một mã), nên khi nói "khối ngoại bán ròng" hãy nêu rõ thang đo. Kỳ `is_partial` = chưa kết thúc, nói rõ là số tạm.
 
 ## Luật trả lời
 

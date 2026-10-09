@@ -1,10 +1,10 @@
 # HODL.VN Market Insight
 
-Dữ liệu thị trường HODL.VN ngay trong trợ lý AI: cổ phiếu Việt Nam (HOSE/HNX/UPCoM), VN-Index, vĩ mô Việt Nam và thế giới, dòng tiền ETF Bitcoin/Ethereum/Solana/vàng, forex, crypto, hàng hoá và bài phân tích HODL.VN — mọi câu trả lời dẫn nguồn.
+Dữ liệu thị trường HODL.VN ngay trong trợ lý AI: cổ phiếu Việt Nam (HOSE/HNX/UPCoM), VN-Index, vĩ mô Việt Nam và thế giới, khối ngoại và tự doanh, dòng tiền ETF Bitcoin/Ethereum/Solana/vàng, forex, crypto, hàng hoá và bài phân tích HODL.VN — mọi câu trả lời dẫn nguồn.
 
 Repo gồm:
 
-- **MCP server** `hodl` — `https://mcp.hodl.vn/mcp` (10 tool chỉ đọc).
+- **MCP server** `hodl` — `https://mcp.hodl.vn/mcp` (11 tool chỉ đọc).
 - **Skill** `hodl-market-research` — dạy AI gọi tool đúng thứ tự, đọc đúng đơn vị, luôn dẫn nguồn.
 - **Plugin Claude Code** `hodl` — gói sẵn cả hai.
 
