@@ -109,6 +109,8 @@ HODL.VN market data inside your AI assistant: Vietnamese stocks, VN-Index, Vietn
 2. Claude Code: `claude plugin marketplace add tohaitrieu/hodl-market-insight` then `claude plugin install hodl@hodl-market-insight`, then `/mcp` → hodl → Authenticate.
 3. Clients without OAuth (Cursor, VS Code, Gemini…): use a free API key (`Authorization: Bearer <key>`) or your personal connection URL from https://hodl.vn/tai-khoan/ket-noi-ai.
 
+53 tools: market data is read-only; with the signed-in user's request (and the client's confirmation prompt) tools can also add/edit/delete that user's own watchlists, price alerts, portfolio deals and accumulation plans, save HODL Lab scripts, and create pending checkout orders whose payment happens on hodl.vn. Nothing touches other users' data.
+
 Data is for reference only, not investment advice.
 
 Privacy policy: https://hodl.vn/chinh-sach-rieng-tu

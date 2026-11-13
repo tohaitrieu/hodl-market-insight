@@ -5,7 +5,7 @@ license: MIT
 compatibility: Cần MCP server hodl (https://mcp.hodl.vn/mcp) — Claude.ai / Desktop cài connector chính chủ https://claude.ai/directory/hodl-vn (đăng nhập HODL.VN, không cần key); client khác xem https://hodl.vn/ai
 metadata:
   author: HODL.VN
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Nghiên cứu thị trường với HODL.VN

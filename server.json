@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "vn.hodl/market-data",
   "title": "HODL.VN — Vietnam market data",
-  "description": "Vietnam stocks, foreign/proprietary flows, macro, ETF flows, forex, crypto. Read-only, cited.",
-  "version": "1.3.0",
+  "description": "Vietnam stocks, investor flows, macro, ETF flows, forex, crypto — cited. Can manage the signed-in user's own watchlists, alerts, portfolio.",
+  "version": "1.4.0",
   "websiteUrl": "https://hodl.vn/ai",
   "icons": [
     { "src": "https://hodl.vn/connector-icon-512.png", "mimeType": "image/png", "sizes": ["512x512"] },
