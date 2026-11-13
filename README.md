@@ -4,7 +4,8 @@ Dữ liệu thị trường HODL.VN ngay trong trợ lý AI: cổ phiếu Việt
 
 Repo gồm:
 
-- **MCP server** `hodl` — `https://mcp.hodl.vn/mcp` (12 tool chỉ đọc).
+- **MCP server** `hodl` — `https://mcp.hodl.vn/mcp` (53 tool: dữ liệu thị trường, BCTC, vĩ mô, ETF, crypto, bài phân tích; watchlist, cảnh báo giá, danh mục, tích sản của chính tài khoản).
+- **Connector chính chủ trên Claude** — https://claude.ai/directory/hodl-vn
 - **Skill** `hodl-market-research` — dạy AI gọi tool đúng thứ tự, đọc đúng đơn vị, luôn dẫn nguồn.
 - **Plugin Claude Code** `hodl` — gói sẵn cả hai.
 
@@ -12,7 +13,7 @@ Trang giới thiệu, danh sách tool và bảng hạn mức: **https://hodl.vn/
 
 ## 1. Đăng nhập (OAuth) — không cần key
 
-Claude.ai, ChatGPT, Claude Code kết nối bằng **đăng nhập HODL.VN**: trỏ tới `https://mcp.hodl.vn/mcp`, trình duyệt mở hodl.vn → đăng nhập bằng mã email → bấm Đồng ý. Gỡ kết nối bất cứ lúc nào tại **Tài khoản → Kết nối AI**: https://hodl.vn/tai-khoan/ket-noi-ai.
+Claude.ai / Claude Desktop cài **connector chính chủ HODL.VN** trong danh bạ Claude; ChatGPT, Claude Code trỏ tới `https://mcp.hodl.vn/mcp`. Cả ba kết nối bằng **đăng nhập HODL.VN**: trình duyệt mở hodl.vn → đăng nhập bằng mã email → bấm Đồng ý. Gỡ kết nối bất cứ lúc nào tại **Tài khoản → Kết nối AI**: https://hodl.vn/tai-khoan/ket-noi-ai.
 
 Client chưa hỗ trợ OAuth (Cursor, VS Code bản cũ, Gemini và AI web khác) dùng **API key** hoặc **URL kết nối riêng** có sẵn ở cùng trang. Mỗi tài khoản có 1 key (Free hoặc Loyalty).
 
@@ -33,11 +34,10 @@ Chỉ cần MCP, không cần skill:
 claude mcp add --transport http hodl https://mcp.hodl.vn/mcp
 ```
 
-### Claude.ai / Claude Desktop
+### Claude.ai / Claude Desktop — connector chính chủ
 
-1. Settings → Connectors → Add custom connector
-2. Name: `HODL.VN`
-3. Remote MCP server URL: `https://mcp.hodl.vn/mcp` → **Connect** → đăng nhập HODL.VN → Đồng ý.
+1. Mở **https://claude.ai/directory/hodl-vn** (hoặc Settings → Connectors → Browse connectors → tìm `HODL.VN`)
+2. **Connect** → đăng nhập HODL.VN → Đồng ý. Không cần key hay URL.
 
 Thêm skill: tải [bản zip của thư mục skill](plugins/hodl/skills/hodl-market-research) (nén cả thư mục `hodl-market-research`) → Settings → Capabilities → Skills → Upload skill.
 
@@ -105,7 +105,7 @@ Bảng đầy đủ, luôn cập nhật: https://hodl.vn/ai
 
 HODL.VN market data inside your AI assistant: Vietnamese stocks, VN-Index, Vietnamese and world macro, Bitcoin/Ethereum/Solana/gold ETF flows, forex, crypto, commodities and HODL.VN analysis — every answer cites its source.
 
-1. Endpoint `https://mcp.hodl.vn/mcp` supports **OAuth 2.1** (issuer `https://hodl.vn`): Claude.ai, ChatGPT and Claude Code just connect and sign in with a HODL.VN account — no key needed.
+1. Claude.ai / Claude Desktop: install the official **HODL.VN connector** from the Claude directory — https://claude.ai/directory/hodl-vn — and sign in with a HODL.VN account. Endpoint `https://mcp.hodl.vn/mcp` supports **OAuth 2.1** (issuer `https://hodl.vn`), so ChatGPT and Claude Code connect the same way — no key needed.
 2. Claude Code: `claude plugin marketplace add tohaitrieu/hodl-market-insight` then `claude plugin install hodl@hodl-market-insight`, then `/mcp` → hodl → Authenticate.
 3. Clients without OAuth (Cursor, VS Code, Gemini…): use a free API key (`Authorization: Bearer <key>`) or your personal connection URL from https://hodl.vn/tai-khoan/ket-noi-ai.
 

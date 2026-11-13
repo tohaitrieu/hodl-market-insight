@@ -2,7 +2,7 @@
 name: hodl-market-research
 description: Tra cứu giá, kỹ thuật, báo cáo tài chính cổ phiếu Việt Nam (HOSE/HNX/UPCoM), VN-Index, vĩ mô Việt Nam và thế giới, dòng tiền ETF, forex, crypto, vàng/dầu và bài phân tích của HODL.VN qua MCP server hodl. Use when the user asks about Vietnamese stocks (tickers like FPT, VCB, HPG), VN-Index, VN30, Vietnamese or world macro data (CPI, GDP, interest rates), Bitcoin/gold ETF flows, forex pairs, crypto, gold or oil prices, or wants Vietnamese market analysis with cited sources.
 license: MIT
-compatibility: Cần MCP server hodl (https://mcp.hodl.vn/mcp) và API key miễn phí tại https://hodl.vn/tai-khoan/ket-noi-ai
+compatibility: Cần MCP server hodl (https://mcp.hodl.vn/mcp) — Claude.ai / Desktop cài connector chính chủ https://claude.ai/directory/hodl-vn (đăng nhập HODL.VN, không cần key); client khác xem https://hodl.vn/ai
 metadata:
   author: HODL.VN
   version: "1.0.0"
@@ -10,9 +10,9 @@ metadata:
 
 # Nghiên cứu thị trường với HODL.VN
 
-Dữ liệu đến từ MCP server `hodl` (12 tool, chỉ đọc). Cổ phiếu, chỉ số Việt Nam, vĩ mô và ETF ghi nguồn HODL.VN; forex, crypto, hàng hoá ghi nguồn totrieu.com.
+Dữ liệu đến từ MCP server `hodl` (53 tool; cẩm nang dưới đây phủ 12 tool dữ liệu thị trường chính — tool watchlist, cảnh báo giá, danh mục chỉ ghi vào tài khoản của chính người dùng khi họ yêu cầu). Cổ phiếu, chỉ số Việt Nam, vĩ mô và ETF ghi nguồn HODL.VN; forex, crypto, hàng hoá ghi nguồn totrieu.com.
 
-Nếu không thấy tool `hodl` nào trong phiên: báo người dùng cài MCP theo https://hodl.vn/ai. Có công cụ đọc web thì đọc `https://hodl.vn/llms.txt` và trang `https://hodl.vn/stock/<mã viết thường>` (vd. `/stock/fpt`). **Không bao giờ bịa số liệu.**
+Nếu không thấy tool `hodl` nào trong phiên: báo người dùng cài connector HODL.VN (Claude: https://claude.ai/directory/hodl-vn; client khác: https://hodl.vn/ai). Có công cụ đọc web thì đọc `https://hodl.vn/llms.txt` và trang `https://hodl.vn/stock/<mã viết thường>` (vd. `/stock/fpt`). **Không bao giờ bịa số liệu.**
 
 ## Quy trình
 

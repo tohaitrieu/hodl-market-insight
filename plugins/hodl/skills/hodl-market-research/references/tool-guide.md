@@ -1,6 +1,6 @@
-# Cẩm nang 12 tool của MCP server hodl
+# Cẩm nang 12 tool dữ liệu thị trường chính của MCP server hodl
 
-Mọi tool chỉ đọc. Mỗi kết quả có dạng `{data, source{name, attribution, url, as_of}, disclaimer}`.
+Server có 53 tool (danh sách đầy đủ: https://hodl.vn/ai); 12 tool dưới đây chỉ đọc. Mỗi kết quả có dạng `{data, source{name, attribution, url, as_of}, disclaimer}`.
 
 | Tool | Gói | Dùng khi | Tham số chính |
 |---|---|---|---|
@@ -30,7 +30,7 @@ Mọi tool chỉ đọc. Mỗi kết quả có dạng `{data, source{name, attri
 | Số năm mùa vụ giá | 5 | 20 |
 | Ảnh chụp kỹ thuật | — | Có |
 
-Bảng cập nhật mới nhất: https://hodl.vn/ai. Mỗi tài khoản (Free lẫn Loyalty) có 1 API key.
+Bảng cập nhật mới nhất: https://hodl.vn/ai. Claude kết nối bằng connector chính chủ (đăng nhập HODL.VN, không key); client không hỗ trợ OAuth dùng 1 API key mỗi tài khoản (Free lẫn Loyalty).
 
 ## Mẹo
 
