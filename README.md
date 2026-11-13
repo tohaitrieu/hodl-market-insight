@@ -36,8 +36,14 @@ claude mcp add --transport http hodl https://mcp.hodl.vn/mcp
 
 ### Claude.ai / Claude Desktop — connector chính chủ
 
-1. Mở **https://claude.ai/directory/hodl-vn** (hoặc Settings → Connectors → Browse connectors → tìm `HODL.VN`)
-2. **Connect** → đăng nhập HODL.VN → Đồng ý. Không cần key hay URL.
+Claude Desktop:
+
+1. Mở **Settings**
+2. Chọn **Customize**
+3. Tìm **HODL.VN**
+4. Kết nối và xác thực (đăng nhập HODL.VN → Đồng ý). Không cần key hay URL.
+
+Claude.ai trên web: mở **https://claude.ai/directory/hodl-vn** → Connect.
 
 Thêm skill: tải [bản zip của thư mục skill](plugins/hodl/skills/hodl-market-research) (nén cả thư mục `hodl-market-research`) → Settings → Capabilities → Skills → Upload skill.
 
